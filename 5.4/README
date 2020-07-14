@@ -1,0 +1,2 @@
+使用fcntl()和close()来实现dup()和dup2().务必牢记dup()需要处理的一种特殊情况,即oldfd与newfd相等.这时, 应检查oldfd是否有效, 测试fntl(oldfd,F_GETFL)是否成更就能达到这一目。 若oldfd无效, 则dup()将返回-1，并将errno制为EBADF。
+编写一程序,验证文件描述符及其副本是否共享了文件偏移量和打开文件的状态标志.
